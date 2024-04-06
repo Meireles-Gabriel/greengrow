@@ -2,46 +2,69 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTextStyles {
-  static TextStyle headerTextStyle({Color color = Colors.white}) {
-    return GoogleFonts.signikaNegative(
-      fontSize: 18,
-      fontWeight: FontWeight.w600,
-      color: color,
-    );
-  }
-
-  static TextStyle montserratStyle(
-      {required Color color, double fontSize = 24}) {
+  static TextStyle montserratSmall(
+      {Color color = Colors.black,
+      fontSize = 12,
+      fontWeight = FontWeight.normal}) {
     return GoogleFonts.montserrat(
-      color: color,
-      fontWeight: FontWeight.w800,
+      fontWeight: fontWeight,
       fontSize: fontSize,
+      color: color,
     );
   }
 
-  static TextStyle headingStyles(
-      {double fontSize = 36, Color color = Colors.white}) {
-    return GoogleFonts.rubikMoonrocks(
+  static TextStyle montserratMedium(
+      {Color color = Colors.black,
+      fontSize = 16,
+      fontWeight = FontWeight.normal}) {
+    return GoogleFonts.montserrat(
+      fontWeight: fontWeight,
       fontSize: fontSize,
-      fontWeight: FontWeight.bold,
       color: color,
-      letterSpacing: 2,
     );
   }
 
-  static TextStyle normalStyle(
-      {Color color = Colors.white, double fontSize = 16}) {
-    return TextStyle(
-      fontWeight: FontWeight.w500,
+  static TextStyle montserratLarge(
+      {Color color = Colors.black,
+      fontSize = 36,
+      fontWeight = FontWeight.normal}) {
+    return GoogleFonts.montserrat(
+      fontWeight: fontWeight,
       fontSize: fontSize,
       color: color,
-      letterSpacing: 1.7,
-      height: 1.5,
     );
   }
 
-  static TextStyle comfortaaStyle() {
-    return GoogleFonts.comfortaa(
-        fontSize: 18, fontWeight: FontWeight.w800, color: Colors.grey);
+  static TextStyle pattayaSmall(
+      {Color color = Colors.black,
+      fontSize = 12,
+      fontWeight = FontWeight.normal}) {
+    return GoogleFonts.pattaya(
+      fontWeight: fontWeight,
+      fontSize: fontSize,
+      color: color,
+    );
+  }
+
+static TextStyle pattayaMedium(
+      {Color color = Colors.black,
+      fontSize = 16,
+      fontWeight = FontWeight.normal}) {
+    return GoogleFonts.pattaya(
+      fontWeight: fontWeight,
+      fontSize: fontSize,
+      color: color,
+    );
+  }
+
+  static TextStyle pattayaLarge(
+      {Color color = Colors.black,
+      fontSize = 36,
+      fontWeight = FontWeight.normal}) {
+    return GoogleFonts.pattaya(
+      fontWeight: fontWeight,
+      fontSize: fontSize,
+      color: color,
+    );
   }
 }

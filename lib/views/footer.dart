@@ -7,13 +7,11 @@ class Footer extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final Size size = MediaQuery.of(context).size;
-    return HelperClass(
-      paddingWidth: size.width * 0.1,
+    return const HelperClass(
       bgColor: Colors.transparent,
-      mobile: const Placeholder(),
-      tablet: const Placeholder(),
-      desktop: const Placeholder(),
+      mobile: Placeholder(),
+      tablet: Placeholder(),
+      desktop: Placeholder(),
     );
   }
 }

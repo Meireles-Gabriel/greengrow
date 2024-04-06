@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:greengrow/resources/app_colors.dart';
 import 'app_text_styles.dart';
 
 class AppButtons {
@@ -8,19 +9,19 @@ class AppButtons {
   }) {
     return MaterialButton(
       onPressed: onTap,
-      color: Colors.black,
-      splashColor: Colors.grey,
+      color: AppColors.callToActionColor,
+      splashColor: AppColors.primaryColor,
       padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 10),
       shape: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30), borderSide: BorderSide.none),
-      hoverColor: Colors.white,
+      hoverColor: AppColors.baseColor,
       elevation: 7,
       height: 46,
       minWidth: 130,
       focusElevation: 12,
       child: Text(
         buttonName,
-        style: AppTextStyles.headerTextStyle(color: Colors.black),
+        style: AppTextStyles.pattayaMedium(),
       ),
     );
   }

@@ -6,9 +6,9 @@ import 'package:greengrow/resources/providers.dart';
 import 'package:greengrow/views/about.dart';
 import 'package:greengrow/views/contact.dart';
 import 'package:greengrow/views/footer.dart';
-import 'package:greengrow/views/home_page.dart';
-import 'package:greengrow/views/my_portfolio.dart';
-import 'package:greengrow/views/my_skills.dart';
+import 'package:greengrow/views/home.dart';
+import 'package:greengrow/views/features.dart';
+import 'package:greengrow/views/cta.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 // ignore: must_be_immutable
@@ -35,7 +35,7 @@ class MainDashBoard extends ConsumerWidget {
     itemScrollController
         .scrollTo(
             index: index,
-            duration: const Duration(seconds: 2),
+            duration: const Duration(seconds: 1),
             curve: Curves.fastLinearToSlowEaseIn)
         .whenComplete(() {
       ref.read(menuIndexProvider.notifier).state = index;
@@ -49,57 +49,56 @@ class MainDashBoard extends ConsumerWidget {
     List menuItems = <String>[
       'Início',
       'Sobre Nós',
-      'Recursos',
-      'Registrar',
+      'Serviços',
+      'Novidades',
       'Contato',
     ];
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: AppColors.bgColor,
+      extendBodyBehindAppBar: true,
+      backgroundColor: AppColors.baseColor,
       appBar: AppBar(
-        backgroundColor: AppColors.bgColor,
-        toolbarHeight: 90,
-        titleSpacing: 40,
-        elevation: 0,
+        surfaceTintColor: Colors.black,
+        backgroundColor: Colors.transparent,
+        toolbarHeight: 50,
+        elevation: 1,
+        shadowColor: Colors.transparent,
+        centerTitle: true,
         title: LayoutBuilder(
           builder: (context, constraints) {
             if (constraints.maxWidth < 768) {
               return Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  const Column(
-                    children: [
-                      SizedBox(
-                        height: 8,
-                      ),
-                    ],
+                  Image.asset(
+                    '/images/greengrowlogotext.png',
+                    width: 150,
+                    color: Colors.white,
                   ),
                   const Spacer(),
                   PopupMenuButton(
                     icon: Icon(
                       Icons.menu_sharp,
                       size: 32,
-                      color: AppColors.bgColor,
+                      color: AppColors.primaryColor,
                     ),
-                    color: AppColors.bgColor,
+                    color: AppColors.primaryColor,
                     position: PopupMenuPosition.under,
                     constraints:
-                        BoxConstraints.tightFor(width: size.width * 0.4),
+                        BoxConstraints.tightFor(width: size.width * 0.3),
                     itemBuilder: (BuildContext context) => menuItems
                         .asMap()
                         .entries
                         .map(
                           (e) => PopupMenuItem(
-                            textStyle: AppTextStyles.headerTextStyle(),
                             onTap: () {
                               scrollTo(index: e.key, ref: ref);
                             },
                             child: Center(
                               child: Text(
                                 e.value,
-                                style: AppTextStyles.montserratStyle(
-                                        color: Colors.white)
-                                    .copyWith(fontSize: 18),
+                                style: AppTextStyles.pattayaMedium(
+                                    color: AppColors.callToActionColor),
                               ),
                             ),
                           ),
@@ -112,14 +111,17 @@ class MainDashBoard extends ConsumerWidget {
               return Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
+                  Image.asset('/images/greengrowlogotext.png',
+                      width: 150, color: Colors.white),
+                  const Spacer(),
                   SizedBox(
-                    height: 30,
+                    height: 50,
                     child: ListView.separated(
                       itemCount: menuItems.length,
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       separatorBuilder: (context, child) =>
-                          const SizedBox(width: 8),
+                          const SizedBox(width: 0),
                       itemBuilder: (context, index) {
                         return InkWell(
                           onTap: () {
@@ -135,7 +137,7 @@ class MainDashBoard extends ConsumerWidget {
                             }
                           },
                           child: buildNavBarAnimatedContainer(
-                              index,
+                              menuItems[index],
                               ref.watch(menuIndexProvider) == index
                                   ? true
                                   : false,
@@ -171,32 +173,18 @@ class MainDashBoard extends ConsumerWidget {
   }
 
   AnimatedContainer buildNavBarAnimatedContainer(
-      int index, bool hover, WidgetRef ref) {
-    List menuItems = ref.watch(languageProvider) == 'en_US'
-        ? <String>[
-            'Home',
-            'Skills',
-            'Portfolio',
-            'About Me',
-            'Contact',
-          ]
-        : <String>[
-            'Início',
-            'Qualificações',
-            'Portfólio',
-            'Sobre Mim',
-            'Contato',
-          ];
+      String text, bool hover, WidgetRef ref) {
     return AnimatedContainer(
-      alignment: Alignment.center,
-      width: 120,
-      duration: const Duration(milliseconds: 200),
-      transform: hover ? onMenuHover : null,
-      child: Text(
-        menuItems[index],
-        style: AppTextStyles.headerTextStyle(
-            color: hover ? AppColors.bgColor : Colors.black),
-      ),
-    );
+        alignment: Alignment.center,
+        width: 100,
+        color: Colors.transparent,
+        duration: const Duration(milliseconds: 200),
+        transform: hover ? onMenuHover : null,
+        child: Text(
+          text,
+          style: AppTextStyles.pattayaMedium(
+              color:
+                  hover ? AppColors.callToActionColor : AppColors.primaryColor),
+        ));
   }
 }
