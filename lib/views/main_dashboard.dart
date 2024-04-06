@@ -80,9 +80,9 @@ class MainDashBoard extends ConsumerWidget {
                     icon: Icon(
                       Icons.menu_sharp,
                       size: 32,
-                      color: AppColors.primaryColor,
+                      color: AppColors.baseColor,
                     ),
-                    color: AppColors.primaryColor,
+                    color: AppColors.baseColor,
                     position: PopupMenuPosition.under,
                     constraints:
                         BoxConstraints.tightFor(width: size.width * 0.3),
