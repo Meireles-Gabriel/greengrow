@@ -37,7 +37,7 @@ class AppTextStyles {
 
   static TextStyle pattayaSmall(
       {Color color = Colors.black,
-      fontSize = 12,
+      fontSize = 14,
       fontWeight = FontWeight.normal}) {
     return GoogleFonts.pattaya(
       fontWeight: fontWeight,
@@ -48,7 +48,7 @@ class AppTextStyles {
 
 static TextStyle pattayaMedium(
       {Color color = Colors.black,
-      fontSize = 16,
+      fontSize = 20,
       fontWeight = FontWeight.normal}) {
     return GoogleFonts.pattaya(
       fontWeight: fontWeight,
