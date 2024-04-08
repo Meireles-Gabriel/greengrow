@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:greengrow/resources/app_colors.dart';
@@ -23,7 +24,7 @@ class Features extends ConsumerWidget {
           feature(
               context,
               'mobile',
-              'images/feature1.jpg',
+              'assets/feature1.jpg',
               'Seleção de Plantas Exclusivas',
               'Explore nossa ampla seleção de plantas raras e exóticas para adicionar um toque único ao seu jardim.'),
           const SizedBox(
@@ -32,7 +33,7 @@ class Features extends ConsumerWidget {
           feature(
               context,
               'mobile',
-              'images/feature2.jpg',
+              'assets/feature2.jpg',
               'Design Paisagístico Personalizado',
               'Nossos especialistas em paisagismo criarão um design personalizado que se adapte perfeitamente ao seu espaço e estilo de vida.'),
           const SizedBox(
@@ -41,7 +42,7 @@ class Features extends ConsumerWidget {
           feature(
               context,
               'mobile',
-              'images/feature3.jpg',
+              'assets/feature3.jpg',
               'Soluções Sustentáveis',
               'Promovemos práticas de jardinagem sustentáveis ​​para ajudar a preservar o meio ambiente e reduzir o desperdício.'),
           const SizedBox(
@@ -63,13 +64,13 @@ class Features extends ConsumerWidget {
               feature(
                   context,
                   'tablet',
-                  'images/feature1.jpg',
+                  'assets/feature1.jpg',
                   'Seleção de Plantas Exclusivas',
                   'Explore nossa ampla seleção de plantas raras e exóticas para adicionar um toque único ao seu jardim.'),
               feature(
                   context,
                   'tablet',
-                  'images/feature2.jpg',
+                  'assets/feature2.jpg',
                   'Design Paisagístico Personalizado',
                   'Nossos especialistas em paisagismo criarão um design personalizado que se adapte perfeitamente ao seu espaço e estilo de vida.'),
             ],
@@ -77,7 +78,7 @@ class Features extends ConsumerWidget {
           feature(
               context,
               'tablet',
-              'images/feature3.jpg',
+              'assets/feature3.jpg',
               'Soluções Sustentáveis',
               'Promovemos práticas de jardinagem sustentáveis ​​para ajudar a preservar o meio ambiente e reduzir o desperdício.'),
           const SizedBox(
@@ -100,19 +101,19 @@ class Features extends ConsumerWidget {
               feature(
                   context,
                   'desktop',
-                  'images/feature1.jpg',
+                  'assets/feature1.jpg',
                   'Seleção de Plantas Exclusivas',
                   'Explore nossa ampla seleção de plantas raras e exóticas para adicionar um toque único ao seu jardim.'),
               feature(
                   context,
                   'desktop',
-                  'images/feature2.jpg',
+                  'assets/feature2.jpg',
                   'Design Paisagístico Personalizado',
                   'Nossos especialistas em paisagismo criarão um design personalizado que se adapte perfeitamente ao seu espaço e estilo de vida.'),
               feature(
                   context,
                   'desktop',
-                  'images/feature3.jpg',
+                  'assets/feature3.jpg',
                   'Soluções Sustentáveis',
                   'Promovemos práticas de jardinagem sustentáveis ​​para ajudar a preservar o meio ambiente e reduzir o desperdício.'),
             ],
@@ -125,34 +126,38 @@ class Features extends ConsumerWidget {
     );
   }
 
-  SizedBox featuresText(context, device) {
+  FadeIn featuresText(context, device) {
     final Size size = MediaQuery.of(context).size;
-    return SizedBox(
-      width: device == 'desktop' ? 1000 : size.width,
-      child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: AppColors.baseColor,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(30),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text(
-                  'Descubra os Recursos Incríveis que Temos para Oferecer',
-                  style: AppTextStyles.pattayaLarge(),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 30),
-                Text(
-                  'Nossa empresa oferece uma variedade de recursos e benefícios para ajudar você a criar o jardim dos seus sonhos. Desde a seleção de plantas até o design paisagístico, estamos aqui para tornar sua experiência de jardinagem mais fácil e gratificante.',
-                  style: AppTextStyles.montserratMedium(),
-                  textAlign: TextAlign.center,
-                )
-              ],
+    return FadeIn(
+      delay: const Duration(seconds: 1),
+      duration: const Duration(milliseconds: 3000),
+      child: SizedBox(
+        width: device == 'desktop' ? 1000 : size.width,
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: AppColors.baseColor,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(30),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    'Descubra os Recursos Incríveis que Temos para Oferecer',
+                    style: AppTextStyles.pattayaLarge(),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 30),
+                  Text(
+                    'Nossa empresa oferece uma variedade de recursos e benefícios para ajudar você a criar o jardim dos seus sonhos. Desde a seleção de plantas até o design paisagístico, estamos aqui para tornar sua experiência de jardinagem mais fácil e gratificante.',
+                    style: AppTextStyles.montserratMedium(),
+                    textAlign: TextAlign.center,
+                  )
+                ],
+              ),
             ),
           ),
         ),
@@ -160,52 +165,55 @@ class Features extends ConsumerWidget {
     );
   }
 
-  SizedBox feature(context, device, image, title, description) {
+  FadeInUp feature(context, device, image, title, description) {
     final Size size = MediaQuery.of(context).size;
-    return SizedBox(
-      height: 500,
-      width: device == 'tablet'
-          ? size.width / 2
-          : device == 'desktop'
-              ? 500
-              : null,
-      child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: AppColors.primaryColor,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(30),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  height: 250,
-                  width: 350,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image.asset(
-                      image,
-                      fit: BoxFit.cover,
+    return FadeInUp(
+      delay: const Duration(seconds: 1),
+      child: SizedBox(
+        height: 500,
+        width: device == 'tablet'
+            ? size.width / 2
+            : device == 'desktop'
+                ? 500
+                : size.width,
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: AppColors.primaryColor,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(30),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    height: 250,
+                    width: 350,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        image,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                ),
-                Text(
-                  title,
-                  style: AppTextStyles.pattayaMedium(fontSize: 24),
-                  textAlign: TextAlign.center,
-                ),
-                Text(
-                  description,
-                  style: AppTextStyles.montserratMedium(),
-                  textAlign: TextAlign.center,
-                )
-              ],
+                  Text(
+                    title,
+                    style: AppTextStyles.pattayaMedium(fontSize: 24),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    description,
+                    style: AppTextStyles.montserratMedium(),
+                    textAlign: TextAlign.center,
+                  )
+                ],
+              ),
             ),
           ),
         ),

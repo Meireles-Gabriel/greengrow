@@ -58,11 +58,14 @@ class MainDashBoard extends ConsumerWidget {
       extendBodyBehindAppBar: true,
       backgroundColor: AppColors.baseColor,
       appBar: AppBar(
-        surfaceTintColor: Colors.black,
-        backgroundColor: Colors.transparent,
+        surfaceTintColor:
+            ref.watch(isAtTopProvider) ? Colors.black : Colors.transparent,
+        backgroundColor: ref.watch(isAtTopProvider)
+            ? Colors.transparent
+            : AppColors.primaryColor,
         toolbarHeight: 50,
         elevation: 1,
-        shadowColor: Colors.transparent,
+        shadowColor: Colors.black,
         centerTitle: true,
         title: LayoutBuilder(
           builder: (context, constraints) {
@@ -71,16 +74,20 @@ class MainDashBoard extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Image.asset(
-                    '/images/greengrowlogotext.png',
+                    'assets/greengrowlogotext.png',
                     width: 150,
-                    color: Colors.white,
+                    color: ref.watch(isAtTopProvider)
+                        ? Colors.white
+                        : AppColors.callToActionColor,
                   ),
                   const Spacer(),
                   PopupMenuButton(
                     icon: Icon(
                       Icons.menu_sharp,
                       size: 32,
-                      color: AppColors.baseColor,
+                      color: ref.watch(isAtTopProvider)
+                          ? AppColors.baseColor
+                          : AppColors.callToActionColor,
                     ),
                     color: AppColors.baseColor,
                     position: PopupMenuPosition.under,
@@ -112,7 +119,10 @@ class MainDashBoard extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Image.asset('/images/greengrowlogotext.png',
-                      width: 150, color: Colors.white),
+                      width: 150,
+                      color: ref.watch(isAtTopProvider)
+                          ? Colors.white
+                          : AppColors.callToActionColor),
                   const Spacer(),
                   SizedBox(
                     height: 50,
@@ -153,20 +163,27 @@ class MainDashBoard extends ConsumerWidget {
           },
         ),
       ),
-      body: Scrollbar(
-        trackVisibility: true,
-        thumbVisibility: true,
-        thickness: 8,
-        interactive: true,
-        controller: yourScrollController,
-        child: ScrollablePositionedList.builder(
-          itemCount: screensList.length,
-          itemScrollController: itemScrollController,
-          itemPositionsListener: itemPositionsListener,
-          scrollOffsetListener: scrollOffsetListener,
-          itemBuilder: (context, index) {
-            return screensList[index];
-          },
+      body: NotificationListener<ScrollUpdateNotification>(
+        onNotification: (notification) {
+          ref.read(isAtTopProvider.notifier).state =
+              notification.metrics.pixels <= 0;
+          return false; // Continue enviando a notificação para os ouvintes
+        },
+        child: Scrollbar(
+          trackVisibility: true,
+          thumbVisibility: true,
+          thickness: 8,
+          interactive: true,
+          controller: yourScrollController,
+          child: ScrollablePositionedList.builder(
+            itemCount: screensList.length,
+            itemScrollController: itemScrollController,
+            itemPositionsListener: itemPositionsListener,
+            scrollOffsetListener: scrollOffsetListener,
+            itemBuilder: (context, index) {
+              return screensList[index];
+            },
+          ),
         ),
       ),
     );
@@ -177,14 +194,23 @@ class MainDashBoard extends ConsumerWidget {
     return AnimatedContainer(
         alignment: Alignment.center,
         width: 100,
-        color: Colors.transparent,
+        color: hover
+            ? ref.watch(isAtTopProvider)
+                ? Colors.transparent
+                : AppColors.callToActionColor
+            : Colors.transparent,
         duration: const Duration(milliseconds: 200),
         transform: hover ? onMenuHover : null,
         child: Text(
           text,
           style: AppTextStyles.pattayaMedium(
-              color:
-                  hover ? AppColors.callToActionColor : AppColors.primaryColor),
+              color: hover
+                  ? ref.watch(isAtTopProvider)
+                      ? AppColors.callToActionColor
+                      : AppColors.primaryColor
+                  : ref.watch(isAtTopProvider)
+                      ? AppColors.primaryColor
+                      : AppColors.callToActionColor),
         ));
   }
 }

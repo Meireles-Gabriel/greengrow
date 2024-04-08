@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:greengrow/resources/app_text_styles.dart';
@@ -15,17 +16,19 @@ class Home extends ConsumerWidget {
         alignment: Alignment.center,
         children: [
           Image.asset(
-            'images/home.jpg',
+            'assets/home.jpg',
             width: size.width,
             height: 500,
             fit: BoxFit.cover,
           ),
-          
-          Text(
-            'Transforme Seu Jardim Em Um Paraíso Verde',
-            style:
-                AppTextStyles.pattayaLarge(color: Colors.white, fontSize: 48),
-            textAlign: TextAlign.center,
+          FadeIn(
+            duration: const Duration(milliseconds: 3000),
+            child: Text(
+              'Transforme Seu Jardim Em Um Paraíso Verde',
+              style:
+                  AppTextStyles.pattayaLarge(color: Colors.white, fontSize: 48),
+              textAlign: TextAlign.center,
+            ),
           ),
         ],
       ),
@@ -33,17 +36,19 @@ class Home extends ConsumerWidget {
         alignment: Alignment.center,
         children: [
           Image.asset(
-            'images/home.jpg',
+            'assets/home.jpg',
             width: size.width,
             height: 500,
             fit: BoxFit.cover,
           ),
-          
-          Text(
-            'Transforme Seu Jardim\nEm Um Paraíso Verde',
-            style:
-                AppTextStyles.pattayaLarge(color: Colors.white, fontSize: 48),
-            textAlign: TextAlign.center,
+          FadeIn(
+            duration: const Duration(milliseconds: 2000),
+            child: Text(
+              'Transforme Seu Jardim\nEm Um Paraíso Verde',
+              style:
+                  AppTextStyles.pattayaLarge(color: Colors.white, fontSize: 48),
+              textAlign: TextAlign.center,
+            ),
           ),
         ],
       ),
@@ -51,17 +56,20 @@ class Home extends ConsumerWidget {
         alignment: Alignment.center,
         children: [
           Image.asset(
-            'images/home.jpg',
+            'assets/home.jpg',
             width: size.width,
             height: 1000,
             fit: BoxFit.cover,
           ),
-          
-          Text(
-            'Transforme Seu Jardim\nEm Um Paraíso Verde',
-            style:
-                AppTextStyles.pattayaLarge(color: Colors.white, fontSize: 96),
-            textAlign: TextAlign.center,
+          FadeIn(
+            delay: const Duration(seconds: 1),
+            duration: const Duration(milliseconds: 3000),
+            child: Text(
+              'Transforme Seu Jardim\nEm Um Paraíso Verde',
+              style:
+                  AppTextStyles.pattayaLarge(color: Colors.white, fontSize: 96),
+              textAlign: TextAlign.center,
+            ),
           ),
         ],
       ),
