@@ -118,7 +118,7 @@ class MainDashBoard extends ConsumerWidget {
               return Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Image.asset('/images/greengrowlogotext.png',
+                  Image.asset('assets/greengrowlogotext.png',
                       width: 150,
                       color: ref.watch(isAtTopProvider)
                           ? Colors.white

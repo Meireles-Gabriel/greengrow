@@ -120,11 +120,11 @@ class CTA extends ConsumerWidget {
                             width: double.infinity,
                             child: ElevatedButton(
                               style: ButtonStyle(
-                                shape: MaterialStateProperty.all(
+                                shape: WidgetStateProperty.all(
                                     const RoundedRectangleBorder(
                                         borderRadius: BorderRadius.zero)),
-                                elevation: MaterialStateProperty.all(5),
-                                backgroundColor: MaterialStateProperty.all(
+                                elevation: WidgetStateProperty.all(5),
+                                backgroundColor: WidgetStateProperty.all(
                                     AppColors.callToActionColor),
                               ),
                               onPressed: () {},
@@ -173,11 +173,11 @@ class CTA extends ConsumerWidget {
                             height: 55,
                             child: ElevatedButton(
                               style: ButtonStyle(
-                                shape: MaterialStateProperty.all(
+                                shape: WidgetStateProperty.all(
                                     const RoundedRectangleBorder(
                                         borderRadius: BorderRadius.zero)),
-                                elevation: MaterialStateProperty.all(5),
-                                backgroundColor: MaterialStateProperty.all(
+                                elevation: WidgetStateProperty.all(5),
+                                backgroundColor: WidgetStateProperty.all(
                                     AppColors.callToActionColor),
                               ),
                               onPressed: () {},

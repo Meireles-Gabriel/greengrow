@@ -7,12 +7,12 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
       options: const FirebaseOptions(
-         apiKey: "AIzaSyCSqvRCaV7klh45oTrDU7Xokxz9tBZthXo",
-          authDomain: "greengrow-landingpage.firebaseapp.com",
-          projectId: "greengrow-landingpage",
-          storageBucket: "greengrow-landingpage.appspot.com",
-          messagingSenderId: "660643279834",
-          appId: "1:660643279834:web:688921f44114471792c6e3"));
+         apiKey: "AIzaSyAdvj3WT1Q9nt39wDSd3bA0s7J9WUTEJhI",
+          authDomain: "green-grow-garden.firebaseapp.com",
+          projectId: "green-grow-garden",
+          storageBucket: "green-grow-garden.firebasestorage.app",
+          messagingSenderId: "555689425554",
+          appId: "1:555689425554:web:107a03532d622c076d444b"));
   runApp(const MainApp());
 }
 

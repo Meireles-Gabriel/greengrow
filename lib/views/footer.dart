@@ -16,7 +16,7 @@ class Footer extends ConsumerWidget {
             height: 25,
           ),
           Image.asset(
-            'images/greengrowlogotext.png',
+            'assets/greengrowlogotext.png',
             height: 50,
           ),
           const Divider(),
@@ -54,7 +54,7 @@ class Footer extends ConsumerWidget {
             height: 50,
           ),
           Image.asset(
-            'images/greengrowlogotext.png',
+            'assets/greengrowlogotext.png',
             height: 50,
           ),
           const Divider(),

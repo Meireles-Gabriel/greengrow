@@ -1,5 +1,15 @@
 {
   "projects": {
-    "default": "greengrow-landingpage"
-  }
+    "default": "green-grow-garden"
+  },
+  "targets": {
+    "greengrow-landingpage": {
+      "hosting": {
+        "greengrowgarden": [
+          "greengrowgarden"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
