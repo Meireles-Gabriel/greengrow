@@ -73,7 +73,7 @@ class About extends ConsumerWidget {
             : device == 'tablet'
                 ? size.width / 2
                 : size.width,
-        height: 500,
+        height: 600,
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Container(
@@ -88,13 +88,19 @@ class About extends ConsumerWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    'Conectando Pessoas à Natureza, Uma Planta de Cada Vez',
+                    'Controle de Pragas Urbanas com Segurança, Rapidez e Garantia',
                     style: AppTextStyles.pattayaLarge(),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 30),
                   Text(
-                    'GreenGrow Gardens é uma empresa especializada em soluções de jardinagem e paisagismo sustentáveis. Nosso objetivo é ajudar as pessoas a criar ambientes verdes e acolhedores, onde possam se conectar com a natureza e desfrutar de um estilo de vida mais saudável e sustentável.',
+                    'A Insetron Dedetizadora nasceu com o compromisso de oferecer soluções eficientes, acessíveis e seguras para o combate de pragas urbanas. Trabalhamos com responsabilidade técnica, produtos legalizados e atendimento de qualidade.',
+                    style: AppTextStyles.montserratMedium(),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    'Atuamos com suporte de Responsável Técnico certificado. Cumprimos a legislação sanitária (RDC ANVISA 52/2009, 222/2018). Priorizamos produtos de baixo impacto ambiental. Utilizamos equipamentos profissionais e EPIs obrigatórios.',
                     style: AppTextStyles.montserratMedium(),
                     textAlign: TextAlign.center,
                   )
