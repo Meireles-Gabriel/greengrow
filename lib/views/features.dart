@@ -25,8 +25,8 @@ class Features extends ConsumerWidget {
               context,
               'mobile',
               'assets/feature1.jpg',
-              'Seleção de Plantas Exclusivas',
-              'Explore nossa ampla seleção de plantas raras e exóticas para adicionar um toque único ao seu jardim.'),
+              'Dedetização Residencial',
+              'Eliminação de baratas, formigas, aranhas, traças, mosquitos e pernilongos. Aplicação segura para ambientes com crianças e pets. Técnicas modernas de pulverização e iscas.'),
           const SizedBox(
             height: 10,
           ),
@@ -34,8 +34,8 @@ class Features extends ConsumerWidget {
               context,
               'mobile',
               'assets/feature2.jpg',
-              'Design Paisagístico Personalizado',
-              'Nossos especialistas em paisagismo criarão um design personalizado que se adapte perfeitamente ao seu espaço e estilo de vida.'),
+              'Dedetização Comercial',
+              'Especializado para restaurantes, hotéis, pousadas, supermercados, escritórios, clínicas e consultórios. Laudo técnico incluso. Adesivo de monitoramento para vigilância sanitária. Agendamento fora do horário comercial.'),
           const SizedBox(
             height: 10,
           ),
@@ -43,8 +43,31 @@ class Features extends ConsumerWidget {
               context,
               'mobile',
               'assets/feature3.jpg',
-              'Soluções Sustentáveis',
-              'Promovemos práticas de jardinagem sustentáveis ​​para ajudar a preservar o meio ambiente e reduzir o desperdício.'),
+              'Desratização (Roedores)',
+              'Controle com porta-iscas lacrados com chumbinho seguro, armadilhas mecânicas e iscas para ambientes externos e internos. Inspeção para identificar focos de infestação. Manutenção programada para clientes comerciais.'),
+          const SizedBox(
+            height: 10,
+          ),
+          feature(
+              context,
+              'mobile',
+              'assets/feature4.jpg',
+              'Controle de Mosquitos e Vetores',
+              'Aplicação com atomizador, ideal para quintais, áreas rurais, chácaras e condomínios. Combate a focos do Aedes Aegypti. Redução de infestação em até 24 horas.'),
+          const SizedBox(
+            height: 10,
+          ),
+          feature(
+              context,
+              'mobile',
+              'assets/feature5.jpg',
+              'Sanitização e Higienização',
+              'Ideal para combater vírus, fungos e bactérias. Ambientes fechados e veículos. Recomendado para ambientes com alta circulação, veículos de transporte de pessoas e alimentos.'),
+          const SizedBox(
+            height: 10,
+          ),
+          feature(context, 'mobile', 'assets/feature6.jpg', 'E mais',
+              'Também realizamos trabalhos de desentupimento, fechamento de telhados contra maritacas, morcegos e pombos, e sanitização de caixas d\'água.'),
           const SizedBox(
             height: 25,
           ),
@@ -61,26 +84,67 @@ class Features extends ConsumerWidget {
           ),
           Row(
             children: [
-              feature(
-                  context,
-                  'tablet',
-                  'assets/feature1.jpg',
-                  'Seleção de Plantas Exclusivas',
-                  'Explore nossa ampla seleção de plantas raras e exóticas para adicionar um toque único ao seu jardim.'),
-              feature(
-                  context,
-                  'tablet',
-                  'assets/feature2.jpg',
-                  'Design Paisagístico Personalizado',
-                  'Nossos especialistas em paisagismo criarão um design personalizado que se adapte perfeitamente ao seu espaço e estilo de vida.'),
+              Expanded(
+                child: feature(
+                    context,
+                    'tablet',
+                    'assets/feature1.jpg',
+                    'Dedetização Residencial',
+                    'Eliminação de baratas, formigas, aranhas, traças, mosquitos e pernilongos. Aplicação segura para ambientes com crianças e pets. Técnicas modernas de pulverização e iscas.'),
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              Expanded(
+                child: feature(
+                    context,
+                    'tablet',
+                    'assets/feature2.jpg',
+                    'Dedetização Comercial',
+                    'Especializado para restaurantes, hotéis, pousadas, supermercados, escritórios, clínicas e consultórios. Laudo técnico incluso. Adesivo de monitoramento para vigilância sanitária. Agendamento fora do horário comercial.'),
+              ),
             ],
           ),
-          feature(
-              context,
-              'tablet',
-              'assets/feature3.jpg',
-              'Soluções Sustentáveis',
-              'Promovemos práticas de jardinagem sustentáveis ​​para ajudar a preservar o meio ambiente e reduzir o desperdício.'),
+          const SizedBox(
+            height: 10,
+          ),
+          Row(
+            children: [
+              feature(
+                  context,
+                  'tablet',
+                  'assets/feature3.jpg',
+                  'Desratização (Roedores)',
+                  'Controle com porta-iscas lacrados com chumbinho seguro, armadilhas mecânicas e iscas para ambientes externos e internos. Inspeção para identificar focos de infestação. Manutenção programada para clientes comerciais.'),
+              const SizedBox(
+                height: 10,
+              ),
+              feature(
+                  context,
+                  'tablet',
+                  'assets/feature4.jpg',
+                  'Controle de Mosquitos e Vetores',
+                  'Aplicação com atomizador, ideal para quintais, áreas rurais, chácaras e condomínios. Combate a focos do Aedes Aegypti. Redução de infestação em até 24 horas.'),
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Row(
+            children: [
+              feature(
+                  context,
+                  'tablet',
+                  'assets/feature5.jpg',
+                  'Sanitização e Higienização',
+                  'Ideal para combater vírus, fungos e bactérias. Ambientes fechados e veículos. Recomendado para ambientes com alta circulação, veículos de transporte de pessoas e alimentos.'),
+              const SizedBox(
+                height: 10,
+              ),
+              feature(context, 'tablet', 'assets/feature6.jpg', 'E mais',
+                  'Também realizamos trabalhos de desentupimento, fechamento de telhados contra maritacas, morcegos e pombos, e sanitização de caixas d\'água.'),
+            ],
+          ),
           const SizedBox(
             height: 50,
           ),
@@ -95,27 +159,53 @@ class Features extends ConsumerWidget {
           const SizedBox(
             height: 20,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          Column(
             children: [
-              feature(
-                  context,
-                  'desktop',
-                  'assets/feature1.jpg',
-                  'Seleção de Plantas Exclusivas',
-                  'Explore nossa ampla seleção de plantas raras e exóticas para adicionar um toque único ao seu jardim.'),
-              feature(
-                  context,
-                  'desktop',
-                  'assets/feature2.jpg',
-                  'Design Paisagístico Personalizado',
-                  'Nossos especialistas em paisagismo criarão um design personalizado que se adapte perfeitamente ao seu espaço e estilo de vida.'),
-              feature(
-                  context,
-                  'desktop',
-                  'assets/feature3.jpg',
-                  'Soluções Sustentáveis',
-                  'Promovemos práticas de jardinagem sustentáveis ​​para ajudar a preservar o meio ambiente e reduzir o desperdício.'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  feature(
+                      context,
+                      'desktop',
+                      'assets/feature1.jpg',
+                      'Dedetização Residencial',
+                      'Eliminação de baratas, formigas, aranhas, traças, mosquitos e pernilongos. Aplicação segura para ambientes com crianças e pets. Técnicas modernas de pulverização e iscas.'),
+                  feature(
+                      context,
+                      'desktop',
+                      'assets/feature2.jpg',
+                      'Dedetização Comercial',
+                      'Especializado para restaurantes, hotéis, pousadas, supermercados, escritórios, clínicas e consultórios. Laudo técnico incluso. Adesivo de monitoramento para vigilância sanitária. Agendamento fora do horário comercial.'),
+                  feature(
+                      context,
+                      'desktop',
+                      'assets/feature3.jpg',
+                      'Desratização (Roedores)',
+                      'Controle com porta-iscas lacrados com chumbinho seguro, armadilhas mecânicas e iscas para ambientes externos e internos. Inspeção para identificar focos de infestação. Manutenção programada para clientes comerciais.'),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  feature(
+                      context,
+                      'desktop',
+                      'assets/feature4.jpg',
+                      'Controle de Mosquitos e Vetores',
+                      'Aplicação com atomizador, ideal para quintais, áreas rurais, chácaras e condomínios. Combate a focos do Aedes Aegypti. Redução de infestação em até 24 horas.'),
+                  feature(
+                      context,
+                      'desktop',
+                      'assets/feature5.jpg',
+                      'Sanitização e Higienização',
+                      'Ideal para combater vírus, fungos e bactérias. Ambientes fechados e veículos. Recomendado para ambientes com alta circulação, veículos de transporte de pessoas e alimentos.'),
+                  feature(context, 'desktop', 'assets/feature6.jpg', 'E mais',
+                      'Também realizamos trabalhos de desentupimento, fechamento de telhados contra maritacas, morcegos e pombos, e sanitização de caixas d\'água.'),
+                ],
+              ),
             ],
           ),
           const SizedBox(
@@ -146,16 +236,10 @@ class Features extends ConsumerWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    'Descubra os Recursos Incríveis que Temos para Oferecer',
+                    'Nossos Serviços',
                     style: AppTextStyles.pattayaLarge(),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 30),
-                  Text(
-                    'Nossa empresa oferece uma variedade de recursos e benefícios para ajudar você a criar o jardim dos seus sonhos. Desde a seleção de plantas até o design paisagístico, estamos aqui para tornar sua experiência de jardinagem mais fácil e gratificante.',
-                    style: AppTextStyles.montserratMedium(),
-                    textAlign: TextAlign.center,
-                  )
                 ],
               ),
             ),
@@ -170,7 +254,7 @@ class Features extends ConsumerWidget {
     return FadeInUp(
       delay: const Duration(seconds: 1),
       child: SizedBox(
-        height: 500,
+        height: 600,
         width: device == 'tablet'
             ? size.width / 2
             : device == 'desktop'

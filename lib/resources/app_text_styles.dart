@@ -38,8 +38,8 @@ class AppTextStyles {
   static TextStyle pattayaSmall(
       {Color color = Colors.black,
       fontSize = 14,
-      fontWeight = FontWeight.normal}) {
-    return GoogleFonts.pattaya(
+      fontWeight = FontWeight.bold}) {
+    return GoogleFonts.roboto(
       fontWeight: fontWeight,
       fontSize: fontSize,
       color: color,
@@ -49,8 +49,8 @@ class AppTextStyles {
 static TextStyle pattayaMedium(
       {Color color = Colors.black,
       fontSize = 20,
-      fontWeight = FontWeight.normal}) {
-    return GoogleFonts.pattaya(
+      fontWeight = FontWeight.bold}) {
+    return GoogleFonts.roboto(
       fontWeight: fontWeight,
       fontSize: fontSize,
       color: color,
@@ -59,9 +59,9 @@ static TextStyle pattayaMedium(
 
   static TextStyle pattayaLarge(
       {Color color = Colors.black,
-      fontSize = 36,
-      fontWeight = FontWeight.normal}) {
-    return GoogleFonts.pattaya(
+      fontSize = 32,
+      fontWeight = FontWeight.bold}) {
+    return GoogleFonts.roboto(
       fontWeight: fontWeight,
       fontSize: fontSize,
       color: color,

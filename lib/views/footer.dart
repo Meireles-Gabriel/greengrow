@@ -19,27 +19,12 @@ class Footer extends ConsumerWidget {
             'assets/greengrowlogotext.png',
             height: 50,
           ),
-          const Divider(),
-          Text(
-            'Políticas de Privacidade',
-            style: AppTextStyles.montserratSmall()
-                .copyWith(decoration: TextDecoration.underline),
-          ),
-          Text(
-            'Termos de Serviço',
-            style: AppTextStyles.montserratSmall()
-                .copyWith(decoration: TextDecoration.underline),
-          ),
-          Text(
-            'Configurações de Cookies',
-            style: AppTextStyles.montserratSmall()
-                .copyWith(decoration: TextDecoration.underline),
-          ),
+          
           const SizedBox(
             height: 10,
           ),
           Text(
-            '© 2023 GreenGrow Gardens. Todos os direitos reservados.',
+            '© 2025 Insetron Dedetizadora. Todos os direitos reservados.',
             style: AppTextStyles.montserratSmall(),
           ),
           const SizedBox(
@@ -57,29 +42,9 @@ class Footer extends ConsumerWidget {
             'assets/greengrowlogotext.png',
             height: 50,
           ),
-          const Divider(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(
-                'Políticas de Privacidade',
-                style: AppTextStyles.montserratSmall()
-                    .copyWith(decoration: TextDecoration.underline),
-              ),
-              Text(
-                'Termos de Serviço',
-                style: AppTextStyles.montserratSmall()
-                    .copyWith(decoration: TextDecoration.underline),
-              ),
-              Text(
-                'Configurações de Cookies',
-                style: AppTextStyles.montserratSmall()
-                    .copyWith(decoration: TextDecoration.underline),
-              ),
-            ],
-          ),
+          
           Text(
-            '© 2023 GreenGrow Gardens. Todos os direitos reservados.',
+            '© 2025 Insetron Dedetizadora. Todos os direitos reservados.',
             style: AppTextStyles.montserratSmall(),
           ),
           const SizedBox(
@@ -97,33 +62,10 @@ class Footer extends ConsumerWidget {
             'assets/greengrowlogotext.png',
             height: 50,
           ),
-          const Divider(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(
-                '© 2023 GreenGrow Gardens. Todos os direitos reservados.',
-                style: AppTextStyles.montserratSmall(),
-              ),
-              Text(
-                'Políticas de Privacidade',
-                style: AppTextStyles.montserratSmall()
-                    .copyWith(decoration: TextDecoration.underline),
-              ),
-              Text(
-                'Termos de Serviço',
-                style: AppTextStyles.montserratSmall()
-                    .copyWith(decoration: TextDecoration.underline),
-              ),
-              Text(
-                'Configurações de Cookies',
-                style: AppTextStyles.montserratSmall()
-                    .copyWith(decoration: TextDecoration.underline),
-              ),
-               
-            ],
+          Text(
+            '© 2025 Insetron Dedetizadora. Todos os direitos reservados.',
+            style: AppTextStyles.montserratSmall(),
           ),
-         
           const SizedBox(
             height: 10,
           ),

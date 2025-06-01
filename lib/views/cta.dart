@@ -4,9 +4,17 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:greengrow/resources/app_colors.dart';
 import 'package:greengrow/resources/app_text_styles.dart';
 import 'package:greengrow/resources/helper_class.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CTA extends ConsumerWidget {
   const CTA({super.key});
+
+  void _launchWhatsApp() async {
+    final Uri url = Uri.parse('https://wa.me/5535991612996');
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch $url');
+    }
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -76,123 +84,43 @@ class CTA extends ConsumerWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Transforme o seu jardim em um paraíso de vegetação exuberante.',
+                      'Entre em Contato Conosco!',
                       style: AppTextStyles.pattayaLarge(color: Colors.white),
                     ),
                     const SizedBox(
                       height: 10,
                     ),
                     Text(
-                      'Deixe seu email para que possamos enviar mais informações sobre nossos projetos de jardinagem sustentável!',
-                      style: AppTextStyles.montserratMedium(color: Colors.white),
+                      'Chame no WhatsApp para que possamos enviar mais informações sobre nossos serviços prestados!',
+                      style:
+                          AppTextStyles.montserratMedium(color: Colors.white),
+                          textAlign: TextAlign.center,
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    if (device == 'mobile')
-                      Column(
-                        children: [
-                          TextField(
-                            decoration: InputDecoration(
-                              filled: true,
-                              fillColor: Colors.white,
-                              labelText: 'Deixe seu Email',
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.zero,
-                                borderSide: BorderSide(
-                                  color: AppColors.callToActionColor,
-                                  width: 2.0,
-                                ),
-                              ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.zero,
-                                borderSide: BorderSide(
-                                  color: AppColors.callToActionColor,
-                                  width: 2.0,
-                                ),
-                              ),
+                    Column(
+                      children: [
+                        SizedBox(
+                          width: size.width * 0.5,
+                          child: ElevatedButton(
+                            style: ButtonStyle(
+                              shape: WidgetStateProperty.all(
+                                  const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.zero)),
+                              elevation: WidgetStateProperty.all(5),
+                              backgroundColor: WidgetStateProperty.all(
+                                  AppColors.callToActionColor),
+                            ),
+                            onPressed: _launchWhatsApp,
+                            child: Text(
+                              'Iniciar Conversa',
+                              style: AppTextStyles.montserratMedium(
+                                  color: Colors.white),
                             ),
                           ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          SizedBox(
-                            width: double.infinity,
-                            child: ElevatedButton(
-                              style: ButtonStyle(
-                                shape: WidgetStateProperty.all(
-                                    const RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.zero)),
-                                elevation: WidgetStateProperty.all(5),
-                                backgroundColor: WidgetStateProperty.all(
-                                    AppColors.callToActionColor),
-                              ),
-                              onPressed: () {},
-                              child: Text(
-                                'Cadastrar',
-                                style: AppTextStyles.montserratMedium(
-                                    color: Colors.white),
-                              ),
-                            ),
-                          ),
-                        ],
-                      )
-                    else
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            width: 500,
-                            child: TextField(
-                              decoration: InputDecoration(
-                                filled: true,
-                                fillColor: Colors.white,
-                                labelText: 'Deixe seu Email',
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.zero,
-                                  borderSide: BorderSide(
-                                    color: AppColors.callToActionColor,
-                                    width: 2.0,
-                                  ),
-                                ),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.zero,
-                                  borderSide: BorderSide(
-                                    color: AppColors.callToActionColor,
-                                    width: 2.0,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          SizedBox(
-                            width: 150,
-                            height: 55,
-                            child: ElevatedButton(
-                              style: ButtonStyle(
-                                shape: WidgetStateProperty.all(
-                                    const RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.zero)),
-                                elevation: WidgetStateProperty.all(5),
-                                backgroundColor: WidgetStateProperty.all(
-                                    AppColors.callToActionColor),
-                              ),
-                              onPressed: () {},
-                              child: Text(
-                                'Cadastrar',
-                                style: AppTextStyles.montserratMedium(
-                                    color: Colors.white),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    Text(
-                      'Ao clicar em "Cadastrar", você está confirmando que concorda com nossos Termos e Condições.',
-                      style: AppTextStyles.montserratSmall(color: Colors.white),
+                        ),
+                      ],
                     ),
                   ],
                 ),

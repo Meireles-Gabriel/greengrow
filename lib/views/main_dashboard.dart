@@ -42,16 +42,14 @@ class MainDashBoard extends ConsumerWidget {
     });
   }
 
-  final yourScrollController = ScrollController();
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     List menuItems = <String>[
       'Início',
       'Sobre Nós',
       'Serviços',
-      'Novidades',
-      'Contato',
+      'Fale Conosco',
+      'Mais Info.',
     ];
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
@@ -169,21 +167,14 @@ class MainDashBoard extends ConsumerWidget {
               notification.metrics.pixels <= 0;
           return false; // Continue enviando a notificação para os ouvintes
         },
-        child: Scrollbar(
-          trackVisibility: true,
-          thumbVisibility: true,
-          thickness: 8,
-          interactive: true,
-          controller: yourScrollController,
-          child: ScrollablePositionedList.builder(
-            itemCount: screensList.length,
-            itemScrollController: itemScrollController,
-            itemPositionsListener: itemPositionsListener,
-            scrollOffsetListener: scrollOffsetListener,
-            itemBuilder: (context, index) {
-              return screensList[index];
-            },
-          ),
+        child: ScrollablePositionedList.builder(
+          itemCount: screensList.length,
+          itemScrollController: itemScrollController,
+          itemPositionsListener: itemPositionsListener,
+          scrollOffsetListener: scrollOffsetListener,
+          itemBuilder: (context, index) {
+            return screensList[index];
+          },
         ),
       ),
     );
@@ -193,7 +184,7 @@ class MainDashBoard extends ConsumerWidget {
       String text, bool hover, WidgetRef ref) {
     return AnimatedContainer(
         alignment: Alignment.center,
-        width: 100,
+        width: 150,
         color: hover
             ? ref.watch(isAtTopProvider)
                 ? Colors.transparent
