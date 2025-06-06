@@ -24,7 +24,7 @@ class MainApp extends StatelessWidget {
     final PageStorageBucket bucket = PageStorageBucket();
     return ProviderScope(
       child: MaterialApp(
-        title: 'GreenGrow',
+        title: 'Insetron Dedetizadora',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.grey,
